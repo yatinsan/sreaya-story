@@ -1,0 +1,630 @@
+/* =========================================================
+   RESPONSIVE OVERRIDES
+   Desktop-first: ≤1100 small laptop, ≤899 tablet, ≤600 phone.
+   899px matches the GSAP matchMedia breakpoint in the chapters.
+   ========================================================= */
+
+/* ---------- Small laptop ---------- */
+@media (max-width: 1100px) {
+  .ch1-panels {
+    grid-template-columns: 1fr 0.8fr 1.25fr;
+  }
+
+  .s7-intro-sub {
+    max-width: 200px;
+  }
+}
+
+/* ---------- Horizontal strip fallback (tablet, phone, reduced motion) ---------- */
+@media (max-width: 899px), (prefers-reduced-motion: reduce) {
+  .ch2-pin {
+    height: auto;
+    display: block;
+    overflow: visible;
+    padding: calc(var(--nav-h) + 40px) 0 80px;
+  }
+
+  .ch2-track {
+    flex-direction: column;
+    align-items: stretch;
+    height: auto;
+    gap: 36px;
+    padding: 0 clamp(16px, 5vw, 48px);
+    max-width: 720px;
+    margin: 0 auto;
+    transform: none !important;
+  }
+
+  .s2-intro,
+  .s2-card,
+  .s2-exam {
+    flex: none;
+    width: 100%;
+  }
+
+  .s2-intro-caption,
+  .s2-progress {
+    display: none;
+  }
+
+  .s2-art {
+    flex: none;
+    height: clamp(260px, 60vw, 360px);
+  }
+
+  .s2-exam-strip {
+    flex: none;
+  }
+
+  .s2-exam-panel {
+    min-height: 300px;
+  }
+
+  .s2-outro {
+    align-self: center;
+    padding: 0;
+  }
+}
+
+/* ---------- Tablet ---------- */
+@media (max-width: 899px) {
+  :root {
+    --nav-h: 58px;
+  }
+
+  /* Nav */
+  .nav-chapter-title {
+    display: none;
+  }
+
+  .nav-btn {
+    padding: 8px 12px 6px;
+    font-size: 1rem;
+  }
+
+  /* Hero */
+  .hero-frame {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .hero-panel-paper .hero-panel-fill {
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 0 56%);
+  }
+
+  .hero-panel-blue .hero-panel-fill {
+    clip-path: polygon(0 58%, 100% 52%, 100% 100%, 0 100%);
+  }
+
+  .hero-panel-red {
+    display: none;
+  }
+
+  .hero-copy {
+    padding: 48px 24px 12px;
+  }
+
+  .hero-stage {
+    min-height: 500px;
+  }
+
+  .hero-burst {
+    width: min(560px, 92vw);
+  }
+
+  .hero-character {
+    width: min(300px, 52vw);
+    margin-top: 10px;
+  }
+
+  .hq-1 {
+    top: 6%;
+    left: 4%;
+  }
+
+  .hq-2 {
+    top: 20%;
+    right: 4%;
+  }
+
+  .hero-scroll-hint {
+    display: none;
+  }
+
+  /* Chapter 1 — panels stack */
+  .ch1-title {
+    grid-template-columns: 1fr;
+  }
+
+  .ch1-stage {
+    height: auto;
+    padding: 24px clamp(16px, 4vw, 40px) 90px;
+  }
+
+  .ch1-panels {
+    height: auto;
+    max-height: none;
+    max-width: 640px;
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .s1-panel {
+    min-height: 0;
+    aspect-ratio: 4 / 4.4;
+  }
+
+  .s1-p3 {
+    aspect-ratio: 4 / 4.8;
+  }
+
+  .s1-walker {
+    width: 52%;
+  }
+
+  .s1-shocked {
+    left: 18%;
+    width: 64%;
+  }
+
+  .s1-bell {
+    width: 26%;
+  }
+
+  /* Chapter 3 */
+  .s3-narration {
+    top: calc(var(--nav-h) + 120px);
+  }
+
+  .s3-hud {
+    top: auto;
+    bottom: 84px;
+    right: 16px;
+    width: min(260px, 60vw);
+  }
+
+  .s3-welcome {
+    bottom: 180px;
+    white-space: normal;
+    width: min(420px, 86vw);
+    text-align: center;
+  }
+
+  /* Chapter 4 */
+  .s4-cover {
+    aspect-ratio: auto;
+    min-height: 0;
+    height: clamp(300px, 70vw, 460px);
+  }
+
+  .s4-before-after {
+    grid-template-columns: 1fr;
+  }
+
+  .s4-firstday,
+  .s4-weeks {
+    min-height: 420px;
+  }
+
+  .s4-canteen {
+    height: 560px;
+  }
+
+  .s4-canteen-sreaya {
+    width: 44%;
+    left: 2%;
+  }
+
+  .s4-canteen-friend {
+    width: 40%;
+    right: 2%;
+  }
+
+  .s4-friend-bubble {
+    top: 30%;
+    right: 34%;
+  }
+
+  .s4-sreaya-bubble {
+    top: 48%;
+    left: 30%;
+  }
+
+  .s4-assign-art {
+    width: 66%;
+    margin-left: -33%;
+  }
+
+  .s4-assign-bubble.bubble.shout {
+    padding: 22px 28px;
+  }
+
+  /* Chapter 5 */
+  .s5-page {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      'main main'
+      'f1 f2'
+      'f3 f4';
+    row-gap: 64px;
+    padding-top: 56px;
+  }
+
+  .friend-slot.is-main-slot {
+    min-height: 420px;
+  }
+
+  .s5-squad {
+    position: relative !important;
+    top: auto;
+    right: auto;
+    margin-top: 12px;
+  }
+
+  /* Chapter 7 */
+  .s7-intro-frame {
+    padding-bottom: 28px;
+  }
+
+  .s7-intro-char {
+    margin-bottom: 0;
+  }
+
+  .s7-tbc,
+  .s7-intro-sub {
+    position: relative !important;
+    top: auto;
+    left: auto;
+    right: auto;
+    margin: 14px auto 0;
+  }
+
+  .s7-about {
+    grid-template-columns: 1fr;
+  }
+
+  .s7-about-art {
+    max-width: 300px;
+  }
+
+  .s7-about-bubble {
+    right: -4%;
+  }
+
+  .s7-skills {
+    grid-template-columns: 1fr;
+  }
+
+  .s7-timeline::before {
+    left: 28px;
+  }
+
+  .s7-tl-item,
+  .s7-tl-item.right {
+    width: auto;
+    margin-left: 0;
+    padding-left: 76px;
+    padding-right: 0;
+  }
+
+  .s7-tl-item .s7-tl-badge,
+  .s7-tl-item.right .s7-tl-badge {
+    left: 0;
+    right: auto;
+  }
+
+  .s7-contact {
+    grid-template-columns: 1fr;
+  }
+
+  /* Ending */
+  .ending-inner {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      'copy copy'
+      'then now';
+    align-items: end;
+    row-gap: 40px;
+  }
+
+  .ending-copy {
+    grid-area: copy;
+    padding-bottom: 0;
+  }
+
+  .ending-then {
+    grid-area: then;
+  }
+
+  .ending-now {
+    grid-area: now;
+  }
+
+  .ending-then img,
+  .ending-now img {
+    height: min(340px, 42vh);
+  }
+}
+
+/* ---------- Phone ---------- */
+@media (max-width: 600px) {
+  .nav-logo-issue,
+  .nav-btn-label {
+    display: none;
+  }
+
+  .nav-btn {
+    padding: 8px 14px 6px;
+    font-size: 1.3rem;
+  }
+
+  .nav-menu-btn {
+    font-size: 1.05rem;
+    padding: 6px 10px 4px;
+  }
+
+  .chapter-arrows {
+    bottom: 12px;
+  }
+
+  /* Hero */
+  .hero-copy {
+    padding: 40px 18px 8px;
+  }
+
+  .hero-title {
+    font-size: clamp(3.6rem, 19vw, 6rem);
+  }
+
+  .hero-letter {
+    -webkit-text-stroke-width: 3px;
+    text-shadow: 4px 4px 0 var(--red), 6px 6px 0 var(--ink);
+  }
+
+  .hero-stage {
+    min-height: 440px;
+  }
+
+  .hero-character {
+    width: min(240px, 60vw);
+  }
+
+  .hero-question .bubble {
+    font-size: 0.85rem;
+    padding: 8px 12px;
+  }
+
+  .hero-corner {
+    display: none;
+  }
+
+  /* Chapter 1 */
+  .s1-panel {
+    aspect-ratio: 4 / 5;
+  }
+
+  .s1-p3 {
+    aspect-ratio: 4 / 6;
+  }
+
+  .s1-teacher-bubble {
+    top: 4%;
+    max-width: 58%;
+  }
+
+  .s1-shout {
+    top: 22%;
+    max-width: 64%;
+  }
+
+  .s1-thought {
+    top: 43%;
+    left: 4%;
+    max-width: 62%;
+  }
+
+  .s1-teacher {
+    width: 40%;
+  }
+
+  /* Chapter 2 */
+  .s2-exam-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .s2-exam-panel {
+    min-height: 300px;
+  }
+
+  .s2-exam-panel.is-panic {
+    min-height: 400px;
+  }
+
+  .s2-exam-art {
+    min-height: 170px;
+  }
+
+  .s2-panic {
+    top: 46%;
+  }
+
+  /* Chapter 3 */
+  .s3-title h2 {
+    font-size: 1.3rem;
+  }
+
+  .s3-walker {
+    width: 62vw;
+    margin-left: -31vw;
+  }
+
+  /* Chapter 4 */
+  .s4-bus-scene {
+    height: 280px;
+  }
+
+  .s4-bus-vehicle {
+    width: 82%;
+  }
+
+  .s4-menu-board {
+    top: 16px;
+    font-size: 0.75rem;
+  }
+
+  .s4-canteen {
+    height: 540px;
+  }
+
+  .s4-canteen-wall {
+    inset: 0 0 26% 0;
+  }
+
+  .s4-food.is-desktop-only {
+    display: none;
+  }
+
+  .s4-table {
+    height: 26%;
+  }
+
+  .s4-canteen-sreaya {
+    width: 58%;
+    left: -2%;
+  }
+
+  .s4-canteen-friend {
+    width: 52%;
+    right: -2%;
+  }
+
+  .s4-friend-bubble {
+    top: 25%;
+    right: 4%;
+  }
+
+  .s4-sreaya-bubble {
+    top: 38%;
+    left: 4%;
+  }
+
+  .s4-stamp {
+    width: 240px;
+    margin-left: -120px;
+  }
+
+  .s4-assign-inner {
+    height: 520px;
+  }
+
+  .s4-assign-art {
+    width: 80%;
+    margin-left: -40%;
+  }
+
+  .s4-krakoom {
+    bottom: 40%;
+  }
+
+  /* Chapter 5 */
+  .s5-page {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'main'
+      'f1'
+      'f2'
+      'f3'
+      'f4';
+    padding: 56px 16px 20px;
+  }
+
+  .friend-slot {
+    min-height: 340px;
+  }
+
+  /* Chapter 6 */
+  .s6-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .s6-scene:nth-child(4n + 1),
+  .s6-photo {
+    grid-row: auto;
+  }
+
+  .s6-scene:nth-child(4n + 1) {
+    min-height: 220px;
+  }
+
+  /* Chapter 7 */
+  .s7-heading {
+    padding: 8px 16px 6px 8px;
+  }
+
+  .s7-heading-icon {
+    width: 42px;
+    height: 42px;
+    font-size: 1.3rem;
+  }
+
+  .s7-about-bubble {
+    top: -10%;
+    right: 0;
+  }
+
+  .s7-memories {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  .s7-hobbies {
+    padding: 56px 12px 24px;
+  }
+
+  .s7-stamp {
+    width: 52px;
+    height: 58px;
+    font-size: 1.5rem;
+  }
+
+  .s7-letter-intro {
+    margin-right: 60px;
+  }
+
+  /* Ending */
+  .ending-inner {
+    padding-top: calc(var(--nav-h) + 40px);
+  }
+
+  .ending-then img,
+  .ending-now img {
+    height: min(260px, 36vh);
+  }
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .hero-burst,
+  .s4-paper,
+  .s4-flash,
+  .s4-bolt {
+    animation: none !important;
+  }
+
+  .s4-paper {
+    display: none;
+  }
+
+  .s3-college {
+    clip-path: none;
+  }
+}
